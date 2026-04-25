@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -43,39 +45,40 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  /* Rep Rank Premium Color Palette */
+  --primary: #003049; /* Deep Navy Blue */
+  --primary-foreground: #F8F9FA; /* Off-white */
+  --sidebar-primary: #003049;
+  --sidebar-primary-foreground: #F8F9FA;
+  --chart-1: #003049;
+  --chart-2: #D62828;
+  --chart-3: #495057;
+  --chart-4: #6C757D;
+  --chart-5: #ADB5BD;
+  --radius: 0rem; /* No border radius for sharp aesthetic */
+  --background: #F8F9FA; /* Off-white background */
+  --foreground: #121212; /* Dark charcoal text */
+  --card: #FFFFFF; /* Pure white cards */
+  --card-foreground: #121212;
+  --popover: #FFFFFF;
+  --popover-foreground: #121212;
+  --secondary: #495057; /* Slate gray */
+  --secondary-foreground: #121212;
+  --muted: #E9ECEF; /* Light gray */
+  --muted-foreground: #6C757D;
+  --accent: #D62828; /* Vibrant red accent */
+  --accent-foreground: #FFFFFF;
+  --destructive: #D62828;
+  --destructive-foreground: #FFFFFF;
+  --border: #DEE2E6; /* Light border */
+  --input: #FFFFFF;
+  --ring: #003049;
+  --sidebar: #F8F9FA;
+  --sidebar-foreground: #121212;
+  --sidebar-accent: #D62828;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #DEE2E6;
+  --sidebar-ring: #003049;
 }
 
 .dark {
@@ -119,6 +122,26 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+  h1 {
+    @apply text-5xl md:text-6xl;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    @apply text-4xl md:text-5xl;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  h3 {
+    @apply text-2xl md:text-3xl;
+    font-weight: 700;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -134,19 +157,7 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
+  /* Custom container utility */
   .container {
     width: 100%;
     margin-left: auto;
@@ -158,6 +169,26 @@
   .flex {
     min-height: 0;
     min-width: 0;
+  }
+
+  /* Rep Rank Specific Utilities */
+  .accent-bar {
+    height: 4px;
+    background-color: #D62828;
+    width: 60px;
+  }
+
+  .metric-value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #003049;
+  }
+
+  .section-divider {
+    height: 1px;
+    background-color: #DEE2E6;
+    margin: 3rem 0;
   }
 
   @media (min-width: 640px) {
