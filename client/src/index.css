@@ -45,7 +45,7 @@
 }
 
 :root {
-  /* Rep Rank Premium Color Palette */
+  /* ReP Rank Premium Color Palette */
   --primary: #003049; /* Deep Navy Blue */
   --primary-foreground: #F8F9FA; /* Off-white */
   --sidebar-primary: #003049;
@@ -171,7 +171,7 @@
     min-width: 0;
   }
 
-  /* Rep Rank Specific Utilities */
+  /* ReP Rank Specific Utilities */
   .accent-bar {
     height: 4px;
     background-color: #D62828;

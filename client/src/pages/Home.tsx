@@ -25,7 +25,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-50">
         <div className="container flex items-center justify-between py-4">
-          <div style={montserratDisplay} className="text-2xl text-primary">Rep Rank</div>
+          <div style={montserratDisplay} className="text-2xl text-primary">ReP Rank</div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-foreground/70 hover:text-foreground transition">Features</a>
             <a href="#how-it-works" className="text-foreground/70 hover:text-foreground transition">How It Works</a>
@@ -68,7 +68,7 @@ export default function Home() {
             <div className="hidden md:block">
               <img 
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663584406591/T9RdV8cRCD3qMo2GreuXiJ/reprank_hero_bg-3qcbsriWAKGyVFxC7HesYb.webp" 
-                alt="Rep Rank Dashboard" 
+                alt="ReP Rank Dashboard" 
                 className="w-full h-auto"
               />
             </div>
@@ -85,7 +85,7 @@ export default function Home() {
               Three Pillars of Personal Brand Intelligence
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Rep Rank combines digital audits, peer benchmarking, and strategic planning into one powerful platform.
+              ReP Rank combines digital audits, peer benchmarking, and strategic planning into one powerful platform.
             </p>
           </div>
 
@@ -174,7 +174,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <div className="accent-bar mx-auto mb-6"></div>
             <h2 style={montserratDisplay} className="text-4xl md:text-5xl text-foreground mb-4">
-              How Rep Rank Works
+              How ReP Rank Works
             </h2>
           </div>
 
@@ -189,7 +189,7 @@ export default function Home() {
             <div>
               <h3 style={montserratDisplay} className="text-3xl mb-6 text-foreground">The Digital Brand Audit</h3>
               <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
-                Rep Rank conducts a comprehensive 4-step analysis of your online presence:
+                ReP Rank conducts a comprehensive 4-step analysis of your online presence:
               </p>
               <div className="space-y-6">
                 <div className="flex gap-4">
@@ -230,7 +230,7 @@ export default function Home() {
             <div className="order-2 md:order-1">
               <h3 style={montserratDisplay} className="text-3xl mb-6 text-foreground">Peer Benchmarking</h3>
               <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
-                See exactly where you stand compared to your industry peers. Rep Rank identifies your competitive advantages and the specific areas where you need to improve.
+                See exactly where you stand compared to your industry peers. ReP Rank identifies your competitive advantages and the specific areas where you need to improve.
               </p>
               <div className="bg-primary/5 border-l-4 border-primary p-6 mb-8">
                 <p style={montserratHeading} className="text-foreground mb-2">Your Rep Score vs Peers Average</p>
@@ -302,7 +302,7 @@ export default function Home() {
               Real Results from Early Users
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Professionals and entrepreneurs are already using Rep Rank to accelerate their careers and businesses.
+              Professionals and entrepreneurs are already using ReP Rank to accelerate their careers and businesses.
             </p>
           </div>
 
@@ -354,7 +354,7 @@ export default function Home() {
               Own Your Reputation
             </h2>
             <p className="text-lg mb-8 opacity-90">
-              Join the waitlist for early access to Rep Rank. Limited spots available for beta users.
+              Join the waitlist for early access to ReP Rank. Limited spots available for beta users.
             </p>
             
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -393,7 +393,7 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div style={montserratDisplay} className="text-lg text-primary mb-4">Rep Rank</div>
+              <div style={montserratDisplay} className="text-lg text-primary mb-4">ReP Rank</div>
               <p className="text-foreground/70 text-sm">Personal branding intelligence for professionals and entrepreneurs.</p>
             </div>
             <div>
@@ -422,7 +422,7 @@ export default function Home() {
           </div>
           <div className="border-t border-border pt-8">
             <p className="text-center text-sm text-foreground/50">
-              © 2026 Rep Rank. All rights reserved.
+              © 2026 ReP Rank. All rights reserved.
             </p>
           </div>
         </div>
