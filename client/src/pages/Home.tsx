@@ -1,7 +1,88 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Check, Zap, TrendingUp, Award, BarChart3 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+
+const BenchmarkChart = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const chartRef = useRef<any>(null);
+
+  useEffect(() => {
+    if (!canvasRef.current) return;
+    
+    const ctx = canvasRef.current.getContext('2d');
+    if (!ctx) return;
+    
+    // Destroy previous chart if it exists
+    if (chartRef.current) {
+      chartRef.current.destroy();
+    }
+    
+    // Create new chart
+    chartRef.current = new (window as any).Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Visibility', 'Authority', 'Engagement'],
+        datasets: [
+          {
+            label: 'Your Score',
+            data: [78, 72, 68],
+            backgroundColor: '#003049',
+            borderRadius: 4,
+            borderSkipped: false
+          },
+          {
+            label: 'Peer Average',
+            data: [62, 58, 54],
+            backgroundColor: '#e8eef5',
+            borderRadius: 4,
+            borderSkipped: false
+          }
+        ]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: {
+              font: { family: 'Montserrat, sans-serif', size: 14, weight: '600' },
+              color: '#1a1a1a',
+              padding: 20
+            }
+          }
+        },
+        scales: {
+          x: {
+            max: 100,
+            ticks: {
+              font: { family: 'Montserrat, sans-serif', size: 12 },
+              color: '#666'
+            },
+            grid: { color: '#e8eef5' }
+          },
+          y: {
+            ticks: {
+              font: { family: 'Montserrat, sans-serif', size: 13, weight: '600' },
+              color: '#1a1a1a'
+            },
+            grid: { display: false }
+          }
+        }
+      }
+    });
+
+    return () => {
+      if (chartRef.current) {
+        chartRef.current.destroy();
+      }
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} style={{ height: '400px' }} />;
+};
 
 const montserratDisplay = { fontFamily: 'Montserrat, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' };
 const montserratHeading = { fontFamily: 'Montserrat, sans-serif', fontWeight: 700 };
@@ -245,11 +326,9 @@ export default function Home() {
               </p>
             </div>
             <div className="order-1 md:order-2">
-              <img 
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663584406591/T9RdV8cRCD3qMo2GreuXiJ/reprank_benchmark_visual-6Mx2EG2ez6TfrFR2BiLFKe.webp" 
-                alt="Peer Benchmarking" 
-                className="w-full h-auto"
-              />
+              <div style={{ width: '100%', height: '400px' }}>
+                <BenchmarkChart />
+              </div>
             </div>
           </div>
         </div>
@@ -288,59 +367,6 @@ export default function Home() {
                   <p className="text-foreground/70">Quality of professional interactions and network influence</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Results Section */}
-      <section id="results" className="py-20 md:py-32">
-        <div className="container">
-          <div className="text-center mb-16">
-            <div className="accent-bar mx-auto mb-6"></div>
-            <h2 style={montserratDisplay} className="text-4xl md:text-5xl text-foreground mb-4">
-              Real Results from Early Users
-            </h2>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Professionals and entrepreneurs are already using ReP Rank to accelerate their careers and businesses.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-card border border-border p-8">
-              <div className="flex items-baseline gap-2 mb-4">
-                <span style={montserratDisplay} className="text-4xl text-primary">+24</span>
-                <span style={montserratHeading} className="text-lg text-accent">Points</span>
-              </div>
-              <h4 style={montserratHeading} className="text-lg mb-2 text-foreground">Entrepreneur</h4>
-              <p className="text-foreground/70 mb-4">
-                Secured $2M seed round by establishing founder authority and digital trust.
-              </p>
-              <p className="text-sm text-foreground/50">Rep Score: 45 → 69 in 90 days</p>
-            </div>
-
-            <div className="bg-card border border-border p-8">
-              <div className="flex items-baseline gap-2 mb-4">
-                <span style={montserratDisplay} className="text-4xl text-primary">+18</span>
-                <span style={montserratHeading} className="text-lg text-accent">Points</span>
-              </div>
-              <h4 style={montserratHeading} className="text-lg mb-2 text-foreground">Executive</h4>
-              <p className="text-foreground/70 mb-4">
-                Recruited for CMO role at Fortune 500 firm via optimized inbound visibility.
-              </p>
-              <p className="text-sm text-foreground/50">Rep Score: 62 → 80 in 60 days</p>
-            </div>
-
-            <div className="bg-card border border-border p-8">
-              <div className="flex items-baseline gap-2 mb-4">
-                <span style={montserratDisplay} className="text-4xl text-primary">+31</span>
-                <span style={montserratHeading} className="text-lg text-accent">Points</span>
-              </div>
-              <h4 style={montserratHeading} className="text-lg mb-2 text-foreground">Consultant</h4>
-              <p className="text-foreground/70 mb-4">
-                3x inbound lead flow through strategic content and peer benchmarking.
-              </p>
-              <p className="text-sm text-foreground/50">Rep Score: 51 → 82 in 90 days</p>
             </div>
           </div>
         </div>
